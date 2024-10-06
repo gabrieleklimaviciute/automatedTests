@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -16,13 +17,13 @@ public class BaseTest {
         driver = new ChromeDriver(options);
 
         driver.get("http://192.168.1.9/");
-        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(3440, 2000));
     }
 
-    @AfterEach
-    void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @AfterEach
+//    void tearDown() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 }
